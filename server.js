@@ -156,5 +156,5 @@ app.post('/api/ads/:id/publish',auth,(req,res)=>{
 });
 app.get('/api/history',auth,(req,res)=>res.json(db.prepare(`SELECT p.*,a.title,v.brand,v.model,ac.name account_name,ac.provider FROM publications p JOIN ads a ON a.id=p.ad_id JOIN vehicles v ON v.id=a.vehicle_id JOIN accounts ac ON ac.id=p.account_id WHERE a.user_id=? ORDER BY p.id DESC`).all(req.user.id)));
 
-app.get('*',(req,res)=>res.sendFile(path.join(ROOT,'public','index.html')));
+app.get('/{*splat}',(req,res)=>res.sendFile(path.join(ROOT,'public','index.html')));
 app.listen(PORT,()=>console.log(`Central Auto rodando na porta ${PORT}`));
