@@ -1,0 +1,16 @@
+{
+  "name": "central-auto-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Central Auto - gerenciador web de anúncios de veículos",
+  "main": "server.js",
+  "scripts": {"start":"node server.js","dev":"node server.js"},
+  "engines": {"node": ">=20"},
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2"
+  }
+}
